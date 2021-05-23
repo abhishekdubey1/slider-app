@@ -44,7 +44,6 @@ const sourceArray = [
 
 const App = () => {
   const [slider, setSlider] = useState(0);
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   const slideRight = () =>
     slider < 4 ? setSlider((s) => s + 1) : setSlider(0);
@@ -58,9 +57,6 @@ const App = () => {
     <div className="app" tabIndex="0" onKeyDown={(e) => handleKeyDown(e)}>
       <Background
         src={sourceArray[slider].bg}
-        isImageLoaded={isImageLoaded}
-        setTrue={() => setIsImageLoaded(true)}
-        setFalse={() => setIsImageLoaded(false)}
       >
         <TextOverlay text={sourceArray[slider].text} />
       </Background>
